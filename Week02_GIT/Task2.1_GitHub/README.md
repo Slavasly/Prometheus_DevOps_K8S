@@ -1,3 +1,12 @@
+Завдання 1.
+Створити акаунт на GitHub
+
+Створіть акаунт на GitHub. Як результат виконання завдання надішліть посилання на створений акаунт (свій профіль).
+
+Редактор коду
+1
+https://github.com/Slavasly/Demo
+
 # new-project
 DevOps by Kubernetes from Prometheus
 =======
