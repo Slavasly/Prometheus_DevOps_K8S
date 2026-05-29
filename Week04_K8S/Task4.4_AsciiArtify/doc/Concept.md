@@ -50,7 +50,10 @@
 
 ## **Демонстраці**я (рекомендований інструмент — k3d)
 Приклад розгортання простого застосунку «Hello World»:
-```go
+````bash
+# Встановіть k3d
+curl -s https://raw.githubusercontent.com/k3d-io/k3d/main/install.sh
+
 # Створення кластера
 k3d cluster create demo-cluster
 
@@ -60,12 +63,15 @@ kubectl get nodes
 # Деплой простого застосунку
 kubectl create deployment hello-world --image=nginx
 
+# Перевірка подів
+kubectl get pods
+
 # Експозиція сервісу
 kubectl expose deployment hello-world --type=NodePort --port=80
 
 # Перевірка
 kubectl get svc
-```
+````
 ![(https://github.com/Slavasly/Prometheus_DevOps_K8S/raw/refs/heads/main/Week04_K8S/Task4.4_AsciiArtify/doc/K3S.gif)](https://github.com/Slavasly/Prometheus_DevOps_K8S/raw/refs/heads/main/Week04_K8S/Task4.4_AsciiArtify/doc/K3S.gif)
 
 ## **Висновки**
