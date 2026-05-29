@@ -48,21 +48,25 @@
 | **Podman** | ✅ Rootless‑режим (безпечніше)<br>✅ Не потребує центрального демона<br>✅ Може замінити Docker для kind/k3d<br>✅ Open Source без комерційних обмежень | ❌ Менша сумісність із деякими інструментами<br>❌ Потрібні додаткові налаштування для інтеграції<br>❌ Менша спільнота ніж у Docker |
 
 
+## **Демонстраці**я (рекомендований інструмент — k3d)
+Приклад розгортання простого застосунку «Hello World»:
+```go
+# Створення кластера
+k3d cluster create demo-cluster
 
+# Перевірка вузлів
+kubectl get nodes
 
+# Деплой простого застосунку
+kubectl create deployment hello-world --image=nginx
 
+# Експозиція сервісу
+kubectl expose deployment hello-world --type=NodePort --port=80
 
-
-
-
-
-
-
-
-
-
-
-
+# Перевірка
+kubectl get svc
+```
+[Week04_K8S\Task4.4_AsciiArtify\doc\K3S.gif](https://github.com/Slavasly/Prometheus_DevOps_K8S/raw/refs/heads/main/Week04_K8S/Task4.4_AsciiArtify/doc/K3S.gif)
 
 ## **Висновки**
 **Minikube** — найкраще для новачків та локального тестування з аддонами.
