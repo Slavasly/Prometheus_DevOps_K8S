@@ -66,7 +66,7 @@ kubectl expose deployment hello-world --type=NodePort --port=80
 # Перевірка
 kubectl get svc
 ```
-[Week04_K8S\Task4.4_AsciiArtify\doc\K3S.gif](https://github.com/Slavasly/Prometheus_DevOps_K8S/raw/refs/heads/main/Week04_K8S/Task4.4_AsciiArtify/doc/K3S.gif)
+![(https://github.com/Slavasly/Prometheus_DevOps_K8S/raw/refs/heads/main/Week04_K8S/Task4.4_AsciiArtify/doc/K3S.gif)](https://github.com/Slavasly/Prometheus_DevOps_K8S/raw/refs/heads/main/Week04_K8S/Task4.4_AsciiArtify/doc/K3S.gif)
 
 ## **Висновки**
 **Minikube** — найкраще для новачків та локального тестування з аддонами.
