@@ -15,9 +15,12 @@ PoC — це етап, коли розробники перевіряють, ч�
 Відповіддю на завдання буде посилання на репозиторій AsciiArtify (формат посилання: https://github.com/<username>/AsciiArtify) з демо-інструкцією на отримання доступу до інтерфейсу ArgoCD. Файл doc/POC.md у форматі Markdown, гілка main (Приклад демо з офіційного сайту — https://argo-cd.readthedocs.io/en/stable/)
  
 # Реалізація:
+https://argo-cd.readthedocs.io/en/stable/
+![alt text](argocd-ui.gif)
 
  1. Розгортання Kubernetes‑кластера
 Оскільки на етапі Concept ви затвердили k3d як інструмент для локального PoC, створюємо кластер:
+![alt text](argocd_arch.png)
 
 ````bash
 k3d cluster create demo-cluster --servers 1 --agents 2
@@ -68,3 +71,8 @@ kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.pas
 Логін: admin / <пароль>
 
 Додаєш репозиторій Git і створюєш перший Application для демонстрації GitOps‑циклу.
+![alt text](image.png)
+Change port Type to NodePort
+![alt text](<ArgoCD demo.gif>)
+Payload Image:
+![alt text](<Payload image.png>)
