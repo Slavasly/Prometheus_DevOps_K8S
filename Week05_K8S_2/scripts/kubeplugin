@@ -1,0 +1,21 @@
+#!/bin/bash
+# Usage: ./kubeplugin.sh <command> <resource_type> <namespace>
+# Example: ./kubeplugin.sh get pods default
+
+# Define command-line arguments
+
+COMMAND=$1
+RESOURCE_TYPE=$2
+NAMESPACE=$3
+
+# Retrieve resource usage statistics from Kubernetes
+kubectl $COMMAND $RESOURCE_TYPE -n $NAMESPACE | tail -n +2 | while read line
+do
+  # Extract CPU and memory usage from the output
+  NAME=$(echo $line | awk '{print $1}')
+  CPU=$(echo $line | awk '{print $2}')
+  MEMORY=$(echo $line | awk '{print $3}')
+
+  # Output the statistics to the console
+  echo "Resource: $RESOURCE_TYPE | Namespace: $NAMESPACE | Name: $NAME | CPU: $CPU | Memory: $MEMORY"
+done
