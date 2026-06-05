@@ -154,9 +154,9 @@ do
   echo "Resource: $RESOURCE_TYPE | Namespace: $NAMESPACE | Name: $NAME | CPU: $CPU | Memory: $MEMORY"
 done
 ```
-6. Запуск та приклади використання:
-# Usage: ./kubeplugin.sh <command> <resource_type> <namespace>
-# Example: ./kubeplugin.sh get pods default
+6. Запуск та приклади використання:  
+Usage: ./kubeplugin.sh <command> <resource_type> <namespace>  
+Example: ./kubeplugin.sh get pods default
 
 ``` kubeplugin top no argocd
 Resource: no | Namespace: argocd | Name: k3d-k3d-cluster-demo-agent-0 | CPU: 68m | Memory: 1%
