@@ -1,4 +1,4 @@
-# Завдання 2
+# Proof of Concept. ArgoCD
 
 Пілотна версія «AsciiArtify» вже в розробці.
 
@@ -7,12 +7,6 @@
 PoC — це етап, коли розробники перевіряють, чи є технічна можливість реалізувати концепцію продукту. На цьому етапі розробники використовують мінімальний набір функцій, щоб продемонструвати, що продукт може працювати та виконувати свої основні функції.
 
 Вам потрібно практично розгорнути Kubernetes кластер за допомогою інструменту, що затверджений на етапі Concept. Встановити систему та налаштувати доступ команди до графічного інтерфейсу ArgoCD.
-
-Основні кроки для підготовки та розгортанню ArgoCD на Kubernetes можна знайти у Coding Session.
-
-Результатом завдання буде встановлена та налаштована система ArgoCD, готова до реалізації MVP.
-
-Відповіддю на завдання буде посилання на репозиторій AsciiArtify (формат посилання: https://github.com/<username>/AsciiArtify) з демо-інструкцією на отримання доступу до інтерфейсу ArgoCD. Файл doc/POC.md у форматі Markdown, гілка main (Приклад демо з офіційного сайту — https://argo-cd.readthedocs.io/en/stable/)
  
 # Реалізація:
 https://argo-cd.readthedocs.io/en/stable/
@@ -64,6 +58,15 @@ ArgoCD генерує пароль у secret:
 kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d
 ````
 → логін: admin, пароль: значення з команди.
+k -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}"
+k -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}"|base64 -d;echo
+
+09:00 App Sync
+kubectl port-forward svc/ambassador -n demo 8088:80
+
+wget -0 /tmp/g.png https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png
+
+curl -F 'image=@/googlelogo_color_272x92dp.png' localhost:8088/img/
 
 5. Перевірка доступу
 Відкриваєш веб‑інтерфейс ArgoCD.
@@ -72,7 +75,3 @@ kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.pas
 
 Додаєш репозиторій Git і створюєш перший Application для демонстрації GitOps‑циклу.
 ![alt text](image.png)
-Change port Type to NodePort
-![alt text](<ArgoCD demo.gif>)
-Payload Image:
-![alt text](<Payload image.png>)
