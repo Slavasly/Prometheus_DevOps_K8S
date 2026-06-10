@@ -75,3 +75,4 @@ curl -F 'image=@/googlelogo_color_272x92dp.png' localhost:8088/img/
 
 Додаєш репозиторій Git і створюєш перший Application для демонстрації GitOps‑циклу.
 ![alt text](image.png)
+
